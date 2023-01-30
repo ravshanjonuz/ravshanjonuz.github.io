@@ -16,7 +16,7 @@ for (var i = 1; i <= 15; i++) {
 		}
 		else {
 			tg.MainButton.show();
-			qator = (i - 1) / 5 + 1
+			qator = Math.floor((i - 1) / 5) + 1
 			ustun = bg[(i - 1) % 5]
 			
 			tg.MainButton.setText(String(qator) + ustun + "-stul tanlandi");
