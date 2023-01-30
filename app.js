@@ -7,26 +7,23 @@ tg.MainButton.color = "#2cab37";
 
 let item = "";
 
-let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-
 let bg = ["a", "b", "c", "d", "e"]
 
-array.forEach(element => {
-    ab = document.getElementById("btn"+String(element));
-    ab.addEventListener("click", function(){
+for (var i = 1; i <= 15; i++) {
+	document.getElementById("btn" + String(i)).addEventListener("click", function(){
 		if (tg.MainButton.isVisible) {
 			tg.MainButton.hide();
 		}
 		else {
 			tg.MainButton.show();
-			qator = (element - 1) / 5 + 1
-			ustun = bg[(element - 1) % 5]
+			qator = (i - 1) / 5 + 1
+			ustun = bg[(i - 1) % 5]
 			
 			tg.MainButton.setText(String(qator) + ustun + "-stul tanlandi");
-			item = String(element);
+			item = String(i);
 		}
 	});
-});
+}
 
 
 Telegram.WebApp.onEvent("mainButtonClicked", function(){
