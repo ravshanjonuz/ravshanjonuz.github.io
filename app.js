@@ -16,10 +16,10 @@ for (var i = 0; i < 15; i++) {
 		if (tg.MainButton.isVisible) {
 			tg.MainButton.hide();
 		}
-		else {						
+		else {		
+			tg.MainButton.show();				
 			tg.MainButton.setText(arrs[i] + "-stul tanlandi");
 			item = String(i+1);
-			tg.MainButton.show();
 		}
 	});
 }
