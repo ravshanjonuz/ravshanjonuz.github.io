@@ -7,117 +7,27 @@ tg.MainButton.color = "#2cab37";
 
 let item = "";
 
-let btn1 = document.getElementById("btn1");
-let btn2 = document.getElementById("btn2");
-let btn3 = document.getElementById("btn3");
-let btn4 = document.getElementById("btn4");
-let btn5 = document.getElementById("btn5");
-let btn6 = document.getElementById("btn6");
-let btn7 = document.getElementById("btn7");
-let btn8 = document.getElementById("btn8");
-let btn9 = document.getElementById("btn9");
+let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
 
+let bg = ["a", "b", "c", "d", "e"]
 
-btn1.addEventListener("click", function(){
-	if (tg.MainButton.isVisible) {
-		tg.MainButton.hide();
-	}
-	else {
-		tg.MainButton.setText("1a-stul tanlandi");
-		item = "1";
-		tg.MainButton.show();
-	}
+array.forEach(element => {
+    ab = document.getElementById("btn"+string(element));
+    ab.addEventListener("click", function(){
+		if (tg.MainButton.isVisible) {
+			tg.MainButton.hide();
+		}
+		else {
+			qator = (element - 1) / 5 + 1
+			ustun = bg[(element - 1) % 5]
+
+			tg.MainButton.setText(strin(qator) + ustun + "-stul tanlandi");
+			item = string(element);
+			tg.MainButton.show();
+		}
+	});
 });
 
-btn2.addEventListener("click", function(){
-	if (tg.MainButton.isVisible) {
-		tg.MainButton.hide();
-	}
-	else {
-		tg.MainButton.setText("1b-stul tanlandi!");
-		item = "2";
-		tg.MainButton.show();
-	}
-});
-
-btn3.addEventListener("click", function(){
-	if (tg.MainButton.isVisible) {
-		tg.MainButton.hide();
-	}
-	else {
-		tg.MainButton.setText("1c-stul tanlandi!");
-		item = "3";
-		tg.MainButton.show();
-	}
-});
-
-btn4.addEventListener("click", function(){
-	if (tg.MainButton.isVisible) {
-		tg.MainButton.hide();
-	}
-	else {
-		tg.MainButton.setText("2a-stul tanlandi!");
-		item = "4";
-		tg.MainButton.show();
-	}
-});
-
-btn5.addEventListener("click", function(){
-	if (tg.MainButton.isVisible) {
-		tg.MainButton.hide();
-	}
-	else {
-		tg.MainButton.setText("2b-stul tanlandi!");
-		item = "5";
-		tg.MainButton.show();
-	}
-});
-
-btn6.addEventListener("click", function(){
-	if (tg.MainButton.isVisible) {
-		tg.MainButton.hide();
-	}
-	else {
-		tg.MainButton.setText("2c-stul tanlandi!");
-		item = "6";
-		tg.MainButton.show();
-	}
-});
-
-
-btn7.addEventListener("click", function(){
-	if (tg.MainButton.isVisible) {
-		tg.MainButton.hide();
-	}
-	else {
-		tg.MainButton.setText("3a-stul tanlandi!");
-		item = "7";
-		tg.MainButton.show();
-	}
-});
-
-
-btn8.addEventListener("click", function(){
-	if (tg.MainButton.isVisible) {
-		tg.MainButton.hide();
-	}
-	else {
-		tg.MainButton.setText("3b-stul tanlandi!");
-		item = "8";
-		tg.MainButton.show();
-	}
-});
-
-btn9.addEventListener("click", function(){
-	if (tg.MainButton.isVisible) {
-		tg.MainButton.hide();
-	}
-	else {
-		tg.MainButton.setText("3c-stul tanlandi!");
-		item = "9";
-		tg.MainButton.show();
-	}
-});
 
 Telegram.WebApp.onEvent("mainButtonClicked", function(){
 	tg.sendData(item);

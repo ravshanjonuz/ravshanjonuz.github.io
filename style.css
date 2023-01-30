@@ -1,7 +1,7 @@
 body {
 	margin: 0;
 	padding: 0;
-	font-size: 18px;
+	font-size: 16px;
 	color: var(--tg-theme-text-color);
 	background: var(--tg-theme-bg-color);
 }
@@ -12,12 +12,12 @@ body {
 
 .inner {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: 220px 220px 220px;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 280px 280px 280px;
 }
 
 p {
-   font-size: 18px;
+   font-size: 16px;
    padding: 0;
    margin: 0;
    color: var(--tg-theme-text-color);
@@ -25,14 +25,14 @@ p {
 
 .price {
 	font-weight: 700;
-	font-size: 18px;
+	font-size: 16px;
 	padding: 0;
 	margin: 0;
 	color: var(--tg-theme-text-color);
  }
 
 .img {
-	width: 130px;
+	width: 200px;
 }
 
 .item {
