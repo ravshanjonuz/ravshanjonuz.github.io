@@ -21,8 +21,8 @@ array.forEach(element => {
 			qator = (element - 1) / 5 + 1
 			ustun = bg[(element - 1) % 5]
 
-			tg.MainButton.setText(string(qator) + ustun + "-stul tanlandi");
-			item = string(element);
+			tg.MainButton.setText(String(qator) + ustun + "-stul tanlandi");
+			item = String(element);
 			tg.MainButton.show();
 		}
 	});
