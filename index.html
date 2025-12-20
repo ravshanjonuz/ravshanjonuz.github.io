@@ -1,194 +1,535 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Ravshanjon.uz</title>
-	<style>
-	.responsive-banner {
-	  display: inline-block;
-	  margin: 50px;
-	  width: 60%;
-	  max-width: 490px;
-	  min-width: 320px;
-	  position: relative;
-	  min-height: 300px;
-	  max-height: 450px;
-	  border-radius: 10px;
-	  overflow: hidden;
-		background-image: linear-gradient(to bottom right, #141BA1, #A784E0);
-		background-repeat: no-repeat;
-	  text-align: left;
-	  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-	}
-	.responsive-banner.second {
-	  background-image: linear-gradient(to bottom right, #F4C28E, #E67163);
-	}
-	.responsive-banner.third {
-	  background-image: linear-gradient(to bottom right, #589FE5, #74DAC4);
-	}
-	.container-envelope {
-	  max-width: calc(100%);
-	  padding: 15px;
-	  color: #fff;
-	   display: -webkit-box;
-	    display: -webkit-flex;
-	    display: -ms-flexbox;
-	    display: flex;
-	  min-height: 300px;
-	  max-height: 450px;
-	}
-	.col-xs-12 {
-	  -webkit-box-flex: 0;
-	    -webkit-flex: 0 0 100%;
-	    -ms-flex: 0 0 100%;
-	    flex: 0 0 100%;
-	    max-width: 100%;
-	  -webkit-align-self: flex-end;
-				-ms-flex-item-align: end;
-						align-self: flex-end;
-	}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoxrux Darmanov | Rasmiy Sahifa</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',    // Asosiy to'q fon
+                            primary: '#1e293b', // Ikkinchi darajali fon
+                            accent: '#3b82f6',  // Yorqin ko'k
+                            gold: '#fbbf24',    // Oltin rang (Premium urg'u uchun)
+                            text: '#e2e8f0'     // Matn rangi
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(59, 130, 246, 0.3)',
+                        'gold-glow': '0 0 15px rgba(251, 191, 36, 0.2)',
+                    }
+                }
+            }
+        }
+    </script>
 
-	@media (min-width: 650px) {
-	  .col-xs-12 {
-	    -webkit-align-self: center;
-	      -ms-flex-item-align: center;
-	      align-self: center;
-	  }
-	    .container-envelope {
-	    max-width: calc(100% - 200px);
-	  }
-	}
-	p {
-	    clear: both;
-	    font-family: 'Work Sans', Helvetica, sans-serif;
-	    text-transform: none;
-	    text-rendering: optimizeLegibility;
-	    font-weight: 500;
-	    line-height: 1.15;
-	    word-wrap: break-word;
-	    margin: 1em 0 0.5em;
-	    margin: 0;
-	    padding: 0;
-	    color: #fff;
-	    position: relative;
-	    word-wrap: break-word;
-	  font-size: 20px;
-	  text-transform: uppercase;
-	  margin-bottom: 20px;
-	}
-	* {
-	    -webkit-box-sizing: border-box;
-	    -moz-box-sizing: border-box;
-	    box-sizing: border-box;
-	}
-	a.more-link {
-	    background-color: rgba(255, 255, 255, 0.35);
-	    display: inline-block;
-	    padding: 12px 18px;
-	    color: #fff;
-	    text-decoration: none;
-	    font: 500 15px 'Work Sans', Helvetica, sans-serif;
-	    line-height: 1.5;
-	    text-align: center;
-	    border: none !important;
-	    position: relative;
-	    border-radius: 30px;
-	  text-transform: uppercase;
-	    -webkit-transition: .1s all ease-in-out;
-	    -moz-transition: .1s all ease-in-out;
-	    -o-transition: .1s all ease-in-out;
-	    transition: .1s all ease-in-out;
-	}
-	a.more-link:hover {
-	  background-color: rgba(255, 255, 255, 0.50);
-	}
-	svg, img {
-	  fill: rgba(0, 0, 0, 0.1);
-	  position: absolute;
-	}
-	img {
-	  max-width : 50%;
-	}
-	.cirle-a {
-	  bottom: -80px;
-	  left: -80px;
-	}
-	.cirle-b {
-	  top: -30px;
-	  right: 70%;
-	}
-	.cirle-c {
-	  top: -330px;
-	  right: -300px;
-	}
-	.cirle-d {
-	  top: 195px;
-	      right: 145px;
-	}
-	img {
-	  top: 0;
-	  right: 0;
-	}
+    <style>
+        /* Maxsus animatsiyalar va stillar */
+        body {
+            background-color: #0f172a;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
 
-	body {
-	  background-color: #eff2f7;
-	  margin-bottom: 50px;
-	  text-align: center;
-	}
-	html, button, input, select, textarea {
-	  font-family: 'Source Sans Pro', Helvetica, sans-serif;
-	  color: #90b0bf;
-	}
-	h1 {
-	  text-align: center;
-	  margin: 30px 15px;
-	}
-	.link-container {
-	  text-align: center;
-	}
-	.link-container a.more-link {
-	  font-family: 'Source Sans Pro', Helvetica, sans-serif;
-	  background-color: #90b0bf;
-	  color: #fff;
-	  display: inline-block;
-	  margin-right: 5px;
-	  margin-bottom: 5px;
-	  line-height: 1.5;
-	  text-decoration: none;
-	  text-transform: none;
-	  font-weight: 400;
-	  letter-spacing: 1px;
-	}
-	</style>
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.9) 100%);
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Rasm effektlari - Professional ishlov */
+        .profile-img-styled {
+            position: relative;
+            z-index: 10;
+            border-radius: 20px;
+            box-shadow: 20px 20px 0px rgba(59, 130, 246, 0.2);
+            transition: all 0.4s ease;
+            filter: grayscale(10%) contrast(110%);
+        }
+
+        .profile-img-styled:hover {
+            transform: translate(-5px, -5px);
+            box-shadow: 25px 25px 0px rgba(251, 191, 36, 0.3);
+            filter: grayscale(0%) contrast(100%);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #3b82f6, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Scroll animatsiyalari uchun oddiy sinf */
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+
+        /* Mobil menyu */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
 </head>
-<body>
-	<b><h1>Ravshanjon Raxmatullayev</h1></b>
-	<h2>Python Fullstack dasturchi</h2>
-	<aside class="responsive-banner first">
-	  <div class="container-envelope">
-	    <svg class="cirle-a" height="160" width="160">
-	      <circle cx="80" cy="80" r="80"/>
-	    </svg>
-	     <svg class="cirle-b" height="60" width="60">
-	      <circle cx="30" cy="30" r="30"/>
-	    </svg>
-	    <svg class="cirle-c" height="600" width="600">
-	      <circle cx="300" cy="300" r="300"/>
-	    </svg>
-	   <svg class="cirle-d" height="60" width="60">
-	      <circle cx="30" cy="30" r="30"/>
-	    </svg>
-	    <img src="https://ravshanjon.uz/static/images/ravshanjon4.jpg" />
-	    <div class="col-xs-12">
-	      <p>To'liq ishlarimni ko'rish uchun quyidagi tugmani bosing</p>
-	      <a target="_blank" href="https://ravshanjon.uz" class="more-link">Saytga kirish</a>
-	    </div>
-	  </div>
-	</aside>
+<body class="font-sans antialiased">
 
-	<div class="link-container">
-	  <a target="_blank" href="https://ravshanjon.uz" class="more-link">Ravshanjon.uz</a>
-	</div>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-card border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="font-serif text-2xl font-bold text-white tracking-wider">
+                        SH<span class="text-brand-gold">.</span>DARMANOV
+                    </span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-gray-300 hover:text-brand-gold transition duration-300 text-sm font-medium uppercase tracking-wide">Bosh sahifa</a>
+                    <a href="#about" class="text-gray-300 hover:text-brand-gold transition duration-300 text-sm font-medium uppercase tracking-wide">Men haqimda</a>
+                    <a href="#services" class="text-gray-300 hover:text-brand-gold transition duration-300 text-sm font-medium uppercase tracking-wide">Faoliyat</a>
+                    <a href="#gallery" class="text-gray-300 hover:text-brand-gold transition duration-300 text-sm font-medium uppercase tracking-wide">Galereya</a>
+                    <a href="#contact" class="bg-brand-accent hover:bg-blue-700 text-white px-6 py-2 rounded-full transition duration-300 font-semibold shadow-glow">Bog'lanish</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-primary absolute w-full border-b border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-base font-medium text-white hover:text-brand-gold">Bosh sahifa</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-brand-gold">Men haqimda</a>
+                <a href="#services" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-brand-gold">Faoliyat</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-brand-accent">Bog'lanish</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute top-20 right-0 w-96 h-96 bg-brand-accent rounded-full filter blur-[120px] opacity-20"></div>
+        <div class="absolute bottom-0 left-0 w-72 h-72 bg-brand-gold rounded-full filter blur-[100px] opacity-10"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Text Content -->
+            <div class="fade-in-up z-10 text-center lg:text-left">
+                <div class="inline-block px-4 py-1 mb-6 border border-brand-gold/30 rounded-full bg-brand-gold/10">
+                    <span class="text-brand-gold text-sm font-semibold tracking-widest uppercase">Professional Ekspert</span>
+                </div>
+                <h1 class="text-5xl lg:text-7xl font-bold leading-tight mb-6 font-serif">
+                    Kelajak <br>
+                    <span class="text-gradient">Strategiyasi</span> va <br>
+                    Natija
+                </h1>
+                <p class="text-gray-400 text-lg mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0">
+                    Men biznes va shaxsiy rivojlanish bo'yicha yangi yondashuvlarni taklif etaman. Maqsad sari dadil qadam tashlash vaqti keldi.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#contact" class="px-8 py-4 bg-white text-brand-dark font-bold rounded-lg hover:bg-gray-100 transition shadow-lg transform hover:-translate-y-1">
+                        Hamkorlik qilish
+                    </a>
+                    <a href="#about" class="px-8 py-4 border border-gray-600 text-white font-bold rounded-lg hover:border-brand-accent hover:text-brand-accent transition flex items-center justify-center gap-2">
+                        <i class="fas fa-play-circle"></i> Batafsil
+                    </a>
+                </div>
+                
+                <!-- Stats -->
+                <div class="mt-12 grid grid-cols-3 gap-6 border-t border-gray-800 pt-8">
+                    <div>
+                        <h3 class="text-3xl font-bold text-white">5+</h3>
+                        <p class="text-xs text-gray-500 uppercase mt-1">Yillik Tajriba</p>
+                    </div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-white">50+</h3>
+                        <p class="text-xs text-gray-500 uppercase mt-1">Muvaffaqiyatli Loyiha</p>
+                    </div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-white">100%</h3>
+                        <p class="text-xs text-gray-500 uppercase mt-1">Mijoz Ishonchi</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="fade-in-up delay-200 relative flex justify-center lg:justify-end">
+                <div class="relative w-full max-w-md">
+                    <!-- Decorative Frame -->
+                    <div class="absolute inset-0 border-2 border-brand-gold/30 rounded-2xl transform translate-x-6 translate-y-6 z-0"></div>
+                    <!-- Main Image (User's uploaded image) -->
+                    <img 
+                        src="image_1b520a.jpg" 
+                        alt="Shoxrux Darmanov" 
+                        class="profile-img-styled w-full h-[600px] object-cover bg-gray-800"
+                    >
+                    <!-- Floating Badge -->
+                    <div class="absolute bottom-10 -left-6 bg-brand-primary p-4 rounded-xl shadow-gold-glow border border-gray-700 z-20 flex items-center gap-3 animate-bounce" style="animation-duration: 3s;">
+                        <div class="bg-green-500/20 p-2 rounded-full text-green-500">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-400">O'sish ko'rsatkichi</p>
+                            <p class="font-bold text-white text-lg">+120%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-brand-primary relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Image Side -->
+                <div class="order-2 lg:order-1 relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="image_1b4f3e.jpg" class="profile-img-styled rounded-2xl object-cover h-64 w-full mb-8 transform translate-y-8 shadow-2xl">
+                        <img src="image_1b4f60.jpg" class="profile-img-styled rounded-2xl object-cover h-64 w-full shadow-2xl border-4 border-brand-dark">
+                    </div>
+                    <!-- Decoration -->
+                    <div class="absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-r from-brand-accent/10 to-transparent rounded-full filter blur-3xl"></div>
+                </div>
+
+                <!-- Content Side -->
+                <div class="order-1 lg:order-2">
+                    <h4 class="text-brand-accent font-bold uppercase tracking-wider mb-2">Men haqimda</h4>
+                    <h2 class="text-4xl font-serif font-bold text-white mb-6">G'oyalarni <span class="text-brand-gold">Reallikka</span> aylantiramiz</h2>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Salom! Men Shoxrux Darmanov. Mening faoliyatim biznes jarayonlarini optimallashtirish, strategik rejalashtirish va shaxsiy brendni rivojlantirishga qaratilgan.
+                    </p>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        Har bir loyihaga individual yondashuv va aniq natijaga qaratilgan harakat - mening asosiy tamoyilim. Men shunchaki maslahat bermayman, balki siz bilan birga o'saman.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-brand-dark flex items-center justify-center text-brand-gold border border-gray-700">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-white font-bold">Professional Strategiya</h5>
+                                <p class="text-sm text-gray-500">Bozor tahlili va aniq reja</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-brand-dark flex items-center justify-center text-brand-gold border border-gray-700">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-white font-bold">Tezkor Natija</h5>
+                                <p class="text-sm text-gray-500">Samaradorlikni oshirish usullari</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-bold text-white mb-4">Mening <span class="text-brand-accent">Yo'nalishlarim</span></h2>
+                <div class="w-24 h-1 bg-brand-gold mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="glass-card p-8 rounded-2xl hover:bg-brand-primary transition duration-300 group cursor-pointer">
+                    <div class="w-14 h-14 bg-blue-500/20 text-blue-500 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Biznes Konsalting</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Biznesingizdagi muammolarni aniqlash va ularni bartaraf etish bo'yicha professional maslahatlar.
+                    </p>
+                    <a href="#" class="text-brand-gold text-sm font-semibold flex items-center gap-2 group-hover:gap-3 transition-all">
+                        Batafsil <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="glass-card p-8 rounded-2xl hover:bg-brand-primary transition duration-300 group cursor-pointer border-brand-gold/20">
+                    <div class="w-14 h-14 bg-brand-gold/20 text-brand-gold rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Marketing & PR</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Brendingizni tanitish va mijozlar oqimini ko'paytirish uchun zamonaviy marketing usullari.
+                    </p>
+                    <a href="#" class="text-brand-gold text-sm font-semibold flex items-center gap-2 group-hover:gap-3 transition-all">
+                        Batafsil <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="glass-card p-8 rounded-2xl hover:bg-brand-primary transition duration-300 group cursor-pointer">
+                    <div class="w-14 h-14 bg-purple-500/20 text-purple-500 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Jamoa Boshqaruvi</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Kuchli jamoa shakllantirish va korporativ madaniyatni rivojlantirish bo'yicha treninglar.
+                    </p>
+                    <a href="#" class="text-brand-gold text-sm font-semibold flex items-center gap-2 group-hover:gap-3 transition-all">
+                        Batafsil <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section (Uses Uploaded Style Logic) -->
+    <section id="gallery" class="py-24 bg-brand-primary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div>
+                    <h4 class="text-brand-accent font-bold uppercase tracking-wider mb-2">Galereya</h4>
+                    <h2 class="text-4xl font-serif font-bold text-white">Hayot va <span class="text-brand-gold">Faoliyat</span></h2>
+                </div>
+                <div class="hidden md:block">
+                    <button class="px-6 py-2 border border-gray-600 rounded-full text-white hover:bg-white hover:text-black transition">Barchasini ko'rish</button>
+                </div>
+            </div>
+
+            <!-- Masonry Grid Layout for Photos -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Photo 1 (Big) -->
+                <div class="md:col-span-2 relative group overflow-hidden rounded-2xl h-80">
+                    <img src="image_1b5247.jpg" alt="Meeting" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 filter brightness-90 hover:brightness-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <div>
+                            <p class="text-brand-gold text-sm font-bold">Konferensiya</p>
+                            <h3 class="text-white text-xl font-bold">Toshkent Biznes Forumi 2024</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 2 -->
+                <div class="relative group overflow-hidden rounded-2xl h-80">
+                    <img src="image_1b520a.jpg" alt="Office" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 filter brightness-90 hover:brightness-100">
+                     <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition"></div>
+                </div>
+
+                <!-- Photo 3 -->
+                <div class="relative group overflow-hidden rounded-2xl h-80">
+                    <img src="image_1b4f3e.jpg" alt="Team" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 filter brightness-90 hover:brightness-100">
+                </div>
+
+                <!-- Photo 4 (Big) -->
+                <div class="md:col-span-2 relative group overflow-hidden rounded-2xl h-80">
+                    <img src="image_1b4f60.jpg" alt="Presentation" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 filter brightness-90 hover:brightness-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <div>
+                            <p class="text-brand-gold text-sm font-bold">Master-klass</p>
+                            <h3 class="text-white text-xl font-bold">Liderlik qobiliyatlari</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="py-20 bg-brand-accent relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <i class="fas fa-quote-left text-4xl text-white/50 mb-6"></i>
+            <h2 class="text-3xl md:text-5xl font-serif font-bold text-white mb-8 italic">
+                "Eng katta xavf — bu hech qanday tavakkal qilmaslikdir. Tez o'zgarayotgan dunyoda yagona xato — tavakkal qilmaslik."
+            </h2>
+            <div class="flex items-center justify-center gap-4">
+                <div class="w-12 h-1 bg-white/50"></div>
+                <p class="text-white font-bold tracking-widest uppercase">Shoxrux Darmanov</p>
+                <div class="w-12 h-1 bg-white/50"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-brand-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-3xl overflow-hidden p-8 md:p-12 border border-gray-700">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <h2 class="text-3xl font-bold text-white mb-4">Bog'lanish</h2>
+                        <p class="text-gray-400 mb-8">
+                            Savollaringiz bormi yoki hamkorlik qilmoqchimisiz? Quyidagi formani to'ldiring.
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-brand-primary flex items-center justify-center text-brand-accent">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <span class="text-gray-300">+998 90 123 45 67</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-brand-primary flex items-center justify-center text-brand-accent">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <span class="text-gray-300">info@shoxruxdarmanov.uz</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-brand-primary flex items-center justify-center text-brand-accent">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <span class="text-gray-300">Toshkent sh., Chilonzor tumani</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 flex gap-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-brand-gold hover:text-black transition"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-brand-gold hover:text-black transition"><i class="fab fa-telegram"></i></a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-brand-gold hover:text-black transition"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+
+                    <form class="space-y-6" onsubmit="event.preventDefault(); showSuccess();">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Ismingiz</label>
+                            <input type="text" class="w-full bg-brand-primary border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-accent transition" placeholder="Shoxrux">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Telefon raqam</label>
+                            <input type="tel" class="w-full bg-brand-primary border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-accent transition" placeholder="+998 90 ...">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Xabar</label>
+                            <textarea rows="4" class="w-full bg-brand-primary border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-accent transition" placeholder="Xabaringizni yozing..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-brand-accent to-blue-600 text-white font-bold py-4 rounded-lg shadow-lg hover:shadow-glow transition transform hover:-translate-y-1">
+                            Yuborish
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-gray-900 text-center">
+        <p class="text-gray-500 text-sm">
+            &copy; 2024 Shoxrux Darmanov. Barcha huquqlar himoyalangan.
+        </p>
+    </footer>
+
+    <!-- Notification & Scripts -->
+    <div id="notification" class="fixed bottom-5 right-5 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg transform translate-y-20 transition duration-300 opacity-0 z-50 flex items-center gap-3">
+        <i class="fas fa-check-circle"></i>
+        <span>Xabaringiz muvaffaqiyatli yuborildi!</span>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                menu.classList.add('hidden'); // Close mobile menu on click
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form Success Message
+        function showSuccess() {
+            const notif = document.getElementById('notification');
+            notif.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                notif.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        // Scroll Animation Observer
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Elements to animate on scroll
+        document.querySelectorAll('section > div').forEach(el => {
+            el.classList.add('opacity-0'); // Initially hide
+            observer.observe(el);
+        });
+
+        // Add initial fade class to elements found by observer
+        document.querySelectorAll('.opacity-0').forEach(el => {
+            el.classList.remove('opacity-0'); // Remove helper class
+            el.style.opacity = '0'; // Set inline style for animation
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        });
+
+        const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(el => {
+            scrollObserver.observe(el);
+        });
+
+    </script>
 </body>
 </html>
